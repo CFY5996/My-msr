@@ -37,17 +37,19 @@ public class EduTeacherController {
      * @return
      */
     @ApiOperation(value = "所有讲师列表")
-    @GetMapping("findALL")
+    @GetMapping
     public R list(){
-        try {
-            int a=10/0;//出现异常
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new MSRException(20001,"出现自定义异常");
+        /*try {
+            int a = 10/0;//出现异常,通过演示不难发现，返回的错误结构跟项目中的返回结构不一致
+        } catch (MSRException e) {
+            //抛出自定义异常
+            throw new MSRException(20002,"自定义异常！！！");
         }
+        */
+
 
         List<EduTeacher> list = teacherService.list(null);
-        return R.ok().data("items", list);
+        return R.ok().data("item",list);
     }
     //根据id删除指定讲师
     @ApiOperation(value = "根据ID删除讲师")
@@ -56,6 +58,16 @@ public class EduTeacherController {
             @ApiParam(name = "id", value = "讲师ID", required = true)
             @PathVariable String id){
         teacherService.removeById(id);
+        return R.ok();
+    }
+
+    @ApiOperation(value = "新增讲师")
+    @PostMapping
+    public R save(
+            @ApiParam(name = "teacher", value = "讲师对象", required = true)
+            @RequestBody EduTeacher teacher){
+
+        teacherService.save(teacher);
         return R.ok();
     }
     @ApiOperation(value = "分页讲师列表")
@@ -78,25 +90,7 @@ public class EduTeacherController {
 
         return  R.ok().data("total", total).data("rows", records);
     }
-    @ApiOperation(value = "新增讲师")
-    @PostMapping
-    public R save(
-            @ApiParam(name = "teacher", value = "讲师对象", required = true)
-            @RequestBody EduTeacher teacher){
 
-        teacherService.save(teacher);
-        return R.ok();
-    }
-    //根据ID查询讲师
-    @ApiOperation(value = "根据ID查询讲师")
-    @GetMapping("{id}")
-    public R getById(
-            @ApiParam(name = "id", value = "讲师ID", required = true)
-            @PathVariable String id){
-
-        EduTeacher teacher = teacherService.getById(id);
-        return R.ok().data("teacher", teacher);
-    }
     @ApiOperation(value = "根据ID修改讲师")
     @PutMapping("{id}")
     public R updateById(
@@ -110,7 +104,15 @@ public class EduTeacherController {
         teacherService.updateById(teacher);
         return R.ok();
     }
+    //根据ID查询讲师
+    @ApiOperation(value = "根据ID查询讲师")
+    @GetMapping("{id}")
+    public R getById(
+            @ApiParam(name = "id", value = "讲师ID", required = true)
+            @PathVariable String id){
 
-
+        EduTeacher teacher = teacherService.getById(id);
+        return R.ok().data("teacher", teacher);
+    }
 }
 
