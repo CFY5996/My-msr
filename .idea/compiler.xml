@@ -10,6 +10,7 @@
         <module name="service-base" />
         <module name="service-edu" />
         <module name="common-utils" />
+        <module name="sysuser" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="service" target="1.8" />
       <module name="service-base" target="1.8" />
       <module name="service-edu" target="1.8" />
+      <module name="sysuser" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +31,7 @@
       <module name="service" options="-parameters" />
       <module name="service-base" options="-parameters" />
       <module name="service-edu" options="-parameters" />
+      <module name="sysuser" options="-parameters" />
     </option>
   </component>
 </project>
