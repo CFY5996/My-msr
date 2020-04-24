@@ -7,7 +7,6 @@ import com.msr.commonutils.R;
 import com.msr.eduservice.entity.EduTeacher;
 import com.msr.eduservice.query.TeacherQuery;
 import com.msr.eduservice.service.EduTeacherService;
-import com.msr.servicebase.exception.MSRException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -28,12 +27,12 @@ import java.util.List;
 @Api(description="讲师管理")
 @RestController
 @RequestMapping("/eduservice/edu-teacher")
+
 public class EduTeacherController {
     @Autowired
     private EduTeacherService teacherService;
-    //查询所有讲师
     /**
-     *  查询所有讲师
+     * 查询所有的讲师
      * @return
      */
     @ApiOperation(value = "所有讲师列表")
@@ -56,13 +55,19 @@ public class EduTeacherController {
     @DeleteMapping("{id}")
     public R removeById(
             @ApiParam(name = "id", value = "讲师ID", required = true)
-            @PathVariable String id){
-        teacherService.removeById(id);
-        return R.ok();
+            @PathVariable String id){ ;
+        //有可能后端删除失败
+        //当删除时受影响的行数大于0并且flag的值不为null时，则说明删除成功
+        boolean result = teacherService.removeById(id);
+        if(result){
+            return R.ok();
+        }else{
+            return R.error().message("删除失败");
+        }
     }
 
     @ApiOperation(value = "新增讲师")
-    @PostMapping
+    @PostMapping("save")
     public R save(
             @ApiParam(name = "teacher", value = "讲师对象", required = true)
             @RequestBody EduTeacher teacher){

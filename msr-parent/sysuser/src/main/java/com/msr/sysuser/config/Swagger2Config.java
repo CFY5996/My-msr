@@ -21,9 +21,7 @@ public class Swagger2Config {
                 .select()
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build();
-
     }
-
     private ApiInfo adminInfo(){
 
         return new ApiInfoBuilder()
@@ -33,6 +31,4 @@ public class Swagger2Config {
                 .contact(new Contact("CFY", "http://www.baidu.com", "390315456@qq.com"))
                 .build();
     }
-
-
 }

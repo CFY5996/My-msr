@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/msr-parent/service/aliyun-oss/aliyun-oss.iml" filepath="$PROJECT_DIR$/msr-parent/service/aliyun-oss/aliyun-oss.iml" />
       <module fileurl="file://$PROJECT_DIR$/msr-parent/common/common.iml" filepath="$PROJECT_DIR$/msr-parent/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/msr-parent/common/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/msr-parent/common/common-utils/common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/msr.iml" filepath="$PROJECT_DIR$/.idea/msr.iml" />
@@ -9,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/msr-parent/service/service.iml" filepath="$PROJECT_DIR$/msr-parent/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/msr-parent/common/service-base/service-base.iml" filepath="$PROJECT_DIR$/msr-parent/common/service-base/service-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/msr-parent/service/service-edu/service-edu.iml" filepath="$PROJECT_DIR$/msr-parent/service/service-edu/service-edu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msr-parent/service/service-oss/service-oss.iml" filepath="$PROJECT_DIR$/msr-parent/service/service-oss/service-oss.iml" />
       <module fileurl="file://$PROJECT_DIR$/msr-parent/sysuser/sysuser.iml" filepath="$PROJECT_DIR$/msr-parent/sysuser/sysuser.iml" />
     </modules>
   </component>

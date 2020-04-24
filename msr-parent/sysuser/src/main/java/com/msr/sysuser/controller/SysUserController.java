@@ -19,7 +19,6 @@ public class SysUserController {
     public R login(
             @ApiParam(name = "sysuser", value = "系统用户对象", required = true)
             @RequestBody Sysuser sysuser) {
-
         return R.ok().data("token", "admin");
     }
 
@@ -33,7 +32,6 @@ public class SysUserController {
                 .data("name", "admin")
                 .data("avatar", "https://msr-file.oss-cn-beijing.aliyuncs.com/avatar/default.jpg");
     }
-
     @PostMapping("logout")
     @ApiOperation(value = "用户登出")
     public R logout() {

@@ -6,7 +6,9 @@
     <file url="file://$PROJECT_DIR$/msr-parent/common/common-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msr-parent/common/service-base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msr-parent/service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/msr-parent/service/aliyun-oss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msr-parent/service/service-edu" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/msr-parent/service/service-oss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msr-parent/sysuser" charset="UTF-8" />
   </component>
 </project>
