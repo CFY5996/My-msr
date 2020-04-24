@@ -36,7 +36,7 @@ public class EduTeacherController {
      * @return
      */
     @ApiOperation(value = "所有讲师列表")
-    @GetMapping
+    @GetMapping("list")
     public R list(){
         /*try {
             int a = 10/0;//出现异常,通过演示不难发现，返回的错误结构跟项目中的返回结构不一致
